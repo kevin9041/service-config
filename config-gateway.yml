@@ -1,0 +1,46 @@
+spring: 
+  profiles:
+    active:
+    - dev
+--- 
+server:
+  port: 9001
+spring: 
+   profiles: dev
+   application: 
+    name: gateway-service
+    
+eureka: 
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://eureka-dev7001.com:7001/eureka
+  instance:
+    instance-id: gateway-service-9001.com
+    prefer-ip-address: true
+ 
+info:
+  app.name: 
+  company.name: www.misrobot.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+server:
+  port: 9001
+spring: 
+   profiles: test
+   application: 
+    name: gateway-service
+ 
+eureka: 
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://eureka-test7001.com:7001/eureka
+  instance:
+    instance-id: gateway-service-9001.com
+    prefer-ip-address: true
+ 
+info:
+  app.name: 
+  company.name: www.misrobot.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
