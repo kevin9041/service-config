@@ -40,7 +40,7 @@ spring:
     username: springcloud
     password: 556600
  
-foo: test_foo
+foo: test_foo again
  
 eureka: 
   instance: 
