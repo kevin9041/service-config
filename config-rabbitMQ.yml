@@ -12,10 +12,12 @@ spring:
     name: config-rabbit
   rabbitmq:
     port: 5672
-    host: localhost
-    username: springcloud
-    password: 556600
+    host: 192.168.10.200
+    username: guest
+    password: guest
 
+foo: dev_foo
+    
 eureka: 
   instance: 
     hostname: eureka-dev7001.com
@@ -26,7 +28,7 @@ eureka:
       defaultZone: http://eureka-dev7001.com:7001/eureka/
 ---
 server: 
-  port: 6001 #注册中心占用7001端口,冒号后面必须要有空格
+  port: 6001 
    
 spring: 
   profiles: test
@@ -37,7 +39,9 @@ spring:
     host: localhost
     username: springcloud
     password: 556600
-    
+ 
+foo: test_foo
+ 
 eureka: 
   instance: 
     hostname: eureka-test7001.com #冒号后面必须要有空格
